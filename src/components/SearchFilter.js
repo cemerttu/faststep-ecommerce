@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { StoreContext } from "../context/StoreContext";
 
 const SearchFilter = () => {
-  const [search, setSearch] = useState("");
+  const { search, setSearch } = useContext(StoreContext);
 
   return (
     <div>
@@ -12,7 +13,6 @@ const SearchFilter = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <p>Searching for: {search}</p>
     </div>
   );
 };

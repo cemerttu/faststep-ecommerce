@@ -1,22 +1,23 @@
 import React from "react";
+import { StoreProvider } from "./context/StoreContext";
 import ProductCatalog from "./components/ProductCatalog";
 import SearchFilter from "./components/SearchFilter";
-import AddToCart from "./components/AddToCart";
-import Payment from "./components/Payment";
-import DeliveryTracking from "./components/DeliveryTracking";
-import UserAccount from "./components/UserAccount";
+import Cart from "./components/Cart";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>FastStep E-commerce</h1>
-      <ProductCatalog />
-      <SearchFilter />
-      <AddToCart />
-      <Payment />
-      <DeliveryTracking />
-      <UserAccount />
-    </div>
+    <StoreProvider>
+      <div className="site-container">
+        <Header />
+        <main className="site-main" style={{ padding: "20px" }}>
+          <h1>FastStep E-commerce</h1>
+          <SearchFilter />
+          <ProductCatalog />
+          <Cart />
+        </main>
+      </div>
+    </StoreProvider>
   );
 }
 
